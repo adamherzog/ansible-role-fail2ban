@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+
+[DEFAULT]
+findtime=600
+bantime=3600
+maxretry=3
+
+[ssh-iptables]
+enabled  = true
+filter   = sshd
+action   = iptables[name=SSH, port=ssh, protocol=tcp]
+logpath  = /var/log/secure
+
